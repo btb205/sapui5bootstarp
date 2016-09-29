@@ -1,0 +1,87 @@
+{
+	"_version": "1.3.0",
+	"sap.app": {
+		"_version": "1.3.0",
+		"id": "mynamespace.myapp",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",  
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		}
+		,
+
+		"dataSources": {
+            
+        }
+	},
+	"sap.ui": {
+		"_version": "1.3.0",
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_bluecrystal"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.2.0",
+		"rootView": {
+			"viewName": "com.wot.bootstrap.view.App", 
+			"type": "XML",
+			"id": "AppContainer"
+		},
+		"autoPrefixId": true,
+		"dependencies": {
+			"minUI5Version": "1.34",
+			"libs": {
+				"sap.ui.core": {
+					"minVersion": "1.34.0"
+				},
+				"sap.m": {
+					"minVersion": "1.34.0"
+				},
+				"sap.ui.layout": {
+					"minVersion": "1.34.0"
+				}
+			}
+		},
+		"models": {
+			"i18n": { 
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+				"bundleName": "com.wot.bootstrap.i18n.i18n"
+				}
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "com.wot.bootstrap.view",
+				"controlId": "AppContainer",
+				"controlAggregation": "pages"
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "startview",
+					"target": "startview"
+				}
+			],
+			"targets": {
+				"startview": {
+					"viewName": "StartView"
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		}
+	}
+}
